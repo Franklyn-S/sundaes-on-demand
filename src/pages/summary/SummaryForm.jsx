@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import { OverlayTrigger, Popover } from "react-bootstrap";
 
-export default function SummaryForm() {
+export default function SummaryForm({ moveOrderPhase }) {
   const [tcChecked, setTcChecked] = useState(false);
 
   const popover = (
@@ -22,7 +22,7 @@ export default function SummaryForm() {
   );
 
   return (
-    <Form>
+    <Form onSubmit={moveOrderPhase}>
       <Form.Group controlId="terms-and-conditions">
         <Form.Check
           type="checkbox"
